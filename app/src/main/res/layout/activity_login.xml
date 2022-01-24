@@ -94,10 +94,13 @@
                 app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
                 app:spinning_bar_width="4dp" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <TextView
                 style="@style/parent"
                 android:text="Make an account"
+                android:onClick="onRegisterClick"
                 android:textAlignment="center"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/newsMoreTextSize" />
