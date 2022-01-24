@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#11CFC5</color>
     <color name="themeColor">#11CFC5</color>
-
+    <color name="registerBack">#d61e8d</color>
     <color name="darkTextColor">#020000</color>
     <color name="contentTextColor">#020000</color>
     <color name="register_bk_color">#11CFC5</color>
