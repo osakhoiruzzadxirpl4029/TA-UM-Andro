@@ -87,6 +87,7 @@
 
                 android:id="@+id/loginButton"
                 style="@style/loginButton"
+                android:onClick="onMainClick"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 android:text="Login"

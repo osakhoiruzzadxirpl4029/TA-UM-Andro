@@ -31,9 +31,9 @@
                 <TextView
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_alignParentLeft="true"
-                    android:textColor="@color/colorPrimary"
                     android:layout_centerVertical="true"
-                    android:text="Registrasi" />
+                    android:text="Registrasi"
+                    android:textColor="@color/colorPrimary" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -88,13 +88,15 @@
                 app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
                 app:spinning_bar_width="4dp" />
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <TextView
                 style="@style/parent"
-                android:text="Back to Login Page"
                 android:onClick="onLoginClick"
+                android:text="Back to Login Page"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/newsMoreTextSize" />
