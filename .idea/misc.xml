@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/button_background_blue.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/button_background_white.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/header_bg.xml" value="0.240625" />
+        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/ic_add_img.xml" value="0.240625" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/ic_back_img.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/ic_facebook.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/ic_google_plus.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17239583333333333" />
-        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/layout/activity_main.xml" value="0.11639492753623189" />
+        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/layout/activity_login.xml" value="0.13963963963963963" />
+        <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Prisalia Amanatus S/AndroidStudioProjects/SistemTA/app/src/main/res/layout/activity_register.xml" value="0.33" />
       </map>
     </option>
