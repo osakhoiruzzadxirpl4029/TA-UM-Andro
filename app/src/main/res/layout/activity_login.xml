@@ -32,7 +32,7 @@
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="Sistem \nKeamanan \nRumah" />
+                    android:text="Aplikasi \nSistem \nKeamanan \nRumah" />
 
                 <ImageView
                     android:layout_width="wrap_content"

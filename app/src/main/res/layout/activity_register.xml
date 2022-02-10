@@ -77,9 +77,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            <Button
 
-                android:id="@+id/loginButton"
+                android:id="@+id/regButton"
                 style="@style/registerButton"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
