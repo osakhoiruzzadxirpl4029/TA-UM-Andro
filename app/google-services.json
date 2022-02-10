@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "123300313986",
+    "project_id": "sistemta-9ef7a",
+    "storage_bucket": "sistemta-9ef7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123300313986:android:d148f9cb4cd3aeb2412d9b",
+        "android_client_info": {
+          "package_name": "com.example.sistemta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123300313986-q5sc3i0gv28updqda5u0p62q7ula0tqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeB8vINIkblbrFPKTWC7unJ1sHUxgiyDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123300313986-q5sc3i0gv28updqda5u0p62q7ula0tqc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
