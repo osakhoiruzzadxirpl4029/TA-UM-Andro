@@ -11,6 +11,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="switch_styling">
+        <item name="colorControlActivated">#e8ff14</item>
+        <item name="colorSwitchThumbNormal">#f2ff7a</item>
+        <item name="android:colorForeground">#42221f1f</item>
+    </style>
+
     <style name="viewParent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
