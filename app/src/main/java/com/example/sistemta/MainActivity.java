@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sol = findViewById(R.id.sol1);
-        buz = findViewById(R.id.buz1);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         if (sol.isChecked()){

@@ -57,6 +57,11 @@
         <item name="backgroundColor">#FFFFFF</item>
 
     </style>
+    <style name="bell_button">
+        <item name="android:background">@drawable/ic_baseline_notifications_24</item>
+        <item name="backgroundColor">#FFFFFF</item>
+
+    </style>
     <style name="spinnerHintText" parent="parent">
         <item name="android:textSize">@dimen/newsMoreTextSize</item>
         <item name="android:textColor">@color/colorAccent</item>

@@ -8,12 +8,10 @@
     android:focusableInTouchMode="true"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@color/slight_orange"
-        >
+        android:background="@color/slight_orange">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -22,15 +20,17 @@
                 android:layout_marginRight="19dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <Button
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@color/transparent"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:layout_marginLeft="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_add_img"/>
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    style="@style/bell_button"/>
+
                 <Button
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -38,11 +38,11 @@
                     />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-
     </LinearLayout>
     <LinearLayout
+        android:elevation="10dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_marginTop="-215dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -51,22 +51,147 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_register_hero" />
-            <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="15dp"
+                    android:text="Selamat Datang," />
+
+                <TextView
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:text="OSA!"
+                    style="@style/viewParent.headerText.NoMode"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/email_grey"
+                    android:text="khoiruzzad72@gmail.com"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/background_main">
+        <LinearLayout
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/logged_view">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Selamat Datang\n"
-                />
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_register_hero" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="15dp"
+                        android:text="Selamat Datang," />
+
+                    <TextView
+                        android:layout_width="112dp"
+                        android:layout_height="wrap_content"
+                        android:text="OSA!"
+                        style="@style/viewParent.headerText.NoMode"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/email_grey"
+                        android:text="khoiruzzad72@gmail.com"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
+        <LinearLayout
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/logged_view">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_register_hero" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="15dp"
+                        android:text="Selamat Datang," />
+
+                    <TextView
+                        android:layout_width="112dp"
+                        android:layout_height="wrap_content"
+                        android:text="OSA!"
+                        style="@style/viewParent.headerText.NoMode"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/email_grey"
+                        android:text="khoiruzzad72@gmail.com"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
 
 
     </LinearLayout>
