@@ -18,7 +18,9 @@
         android:theme="@style/Theme.SistemTA">
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"

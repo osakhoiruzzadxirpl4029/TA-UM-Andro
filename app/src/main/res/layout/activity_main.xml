@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
-    android:theme="@style/AppTheme"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@color/slight_orange">
+        android:background="@drawable/leaves2">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -22,18 +21,18 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="35dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_add_img"/>
                 <Button
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     style="@style/bell_button"/>
 
                 <Button
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     style="@style/logout_button"
                     />
             </LinearLayout>
@@ -93,53 +92,36 @@
         android:orientation="vertical"
         android:layout_marginTop="-50dp"
         android:background="@drawable/background_main">
+
         <LinearLayout
-            android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/logged_view">
-            <LinearLayout
+            android:background="@drawable/logged_view2"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                style="@style/viewParent.headerText.NoMode2"
+                android:layout_height="wrap_content"
+                android:text="Kondisi Rumah Anda: "/>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_register_hero" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="15dp"
-                        android:text="Selamat Datang," />
+                android:text="@string/kondisi_prim"
+                android:layout_margin="30dp"
+                android:gravity="center"
+                style="@style/viewParent.headerText.NoMode"/>
 
-                    <TextView
-                        android:layout_width="112dp"
-                        android:layout_height="wrap_content"
-                        android:text="OSA!"
-                        style="@style/viewParent.headerText.NoMode"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/email_grey"
-                        android:text="khoiruzzad72@gmail.com"
-                        />
-                </LinearLayout>
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kondisi_desc"
+                android:gravity="center"/>
 
         </LinearLayout>
         <LinearLayout
@@ -173,21 +155,36 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="50dp"
+                    android:paddingBottom="30dp"
                     android:gravity="center"
                     >
-
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/sol1"
                         style="@style/switch_styling"
                         android:layout_width="300dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="50dp"
                         android:checked="false"
                         android:text="SOLENOID"
                         android:textOff="OFF"
                         android:textOn="ON" />
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center">
 
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/buz1"
+                        style="@style/switch_styling"
+                        android:layout_width="300dp"
+                        android:paddingBottom="20dp"
+                        android:layout_height="match_parent"
+                        android:checked="false"
+                        android:text="BUZZER"
+                        android:textOff="OFF"
+                        android:textOn="ON" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -195,28 +192,23 @@
                     android:layout_height="100dp"
                     android:gravity="center">
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/buz1"
-                        style="@style/switch_styling"
-                        android:layout_width="300dp"
-                        android:layout_height="match_parent"
-                        android:checked="false"
-                        android:text="BUZZER"
-                        android:textOff="OFF"
-                        android:textOn="ON" />
-
+                    <Button
+                        android:id="@+id/setAlarm"
+                        style="@style/registerButton"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:text="Set Alarm"
+                        app:finalCornerAngle="27dp"
+                        app:spinning_bar_color="#FFF"
+                        app:spinning_bar_padding="6dp"
+                        app:spinning_bar_width="4dp" />
 
                 </RelativeLayout>
+
             </LinearLayout>
 
         </LinearLayout>
 
-
     </LinearLayout>
 
-
-
-
-
-
-</ScrollView>
+</LinearLayout>

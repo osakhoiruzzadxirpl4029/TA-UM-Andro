@@ -22,18 +22,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+     //   mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        if (sol.isChecked()){
-            mDatabase.child("Solenoid").setValue("1");
-        }else{
-            mDatabase.child("Solenoid").setValue("0");
-        }
-        if (buz.isChecked()){
-            mDatabase.child("Buzzer").setValue("1");
-        }else{
-            mDatabase.child("Buzzer").setValue("0");
-        }
+      //  if (sol.isChecked()){
+       //     mDatabase.child("Solenoid").setValue("1");
+        //}else{
+         //   mDatabase.child("Solenoid").setValue("0");
+        //}
+        //if (buz.isChecked()){
+        //    mDatabase.child("Buzzer").setValue("1");
+        //}else{
+         //   mDatabase.child("Buzzer").setValue("0");
+        //}
 
     }
 

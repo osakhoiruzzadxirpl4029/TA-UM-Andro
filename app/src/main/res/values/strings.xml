@@ -4,4 +4,8 @@
     <string name="login_password_hint">Password</string>
     <string name="osa">Osa</string>
     <string name="welcome">Selamat Datang,</string>
+    <string name="kondisi_prim">AMAN</string>
+    <string name="kondisi_nope">TIDAK AMAN</string>
+    <string name="kondisi_desc2">Terdeteksi Pergerakan</string>
+    <string name="kondisi_desc">Tidak terdeteksi pergerakan</string>
 </resources>
