@@ -54,7 +54,7 @@
     </style>
     <style name="logout_button">
         <item name="android:background">@drawable/iic_exit</item>
-        <item name="backgroundColor">#FFFFFF</item>
+        <item name="backgroundColor">#cf3434</item>
 
     </style>
     <style name="bell_button">
