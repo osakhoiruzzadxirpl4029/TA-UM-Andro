@@ -8,4 +8,5 @@
     <string name="kondisi_nope">TIDAK AMAN</string>
     <string name="kondisi_desc2">Terdeteksi Pergerakan</string>
     <string name="kondisi_desc">Tidak terdeteksi pergerakan</string>
+    <string name="user_name">User</string>
 </resources>

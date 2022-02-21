@@ -34,13 +34,15 @@
                     android:layout_centerVertical="true"
                     android:text="Aplikasi \nSistem \nKeamanan \nRumah" />
 
-                <ImageView
+           <!--     <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_register_hero" />
-
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginRight="0dp"
+                    android:src="" />
+            -->
 
             </RelativeLayout>
 
@@ -75,14 +77,14 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+<!--            <TextView
                 style="@style/viewParent"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/newsMoreTextSize" />
-
+-->
             <Button
 
                 android:id="@+id/loginButton"

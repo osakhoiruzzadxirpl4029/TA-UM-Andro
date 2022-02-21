@@ -19,7 +19,17 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/button_background_white.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/header_bg.xml" value="0.187" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_add_img.xml" value="0.187" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_back_img.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.161" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_facebook.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_google_plus.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_launcher_background.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_logoUM_background.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_register_hero.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/ic_side_bg.xml" value="0.161" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/iic_exit.xml" value="0.161" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/logged_view.xml" value="0.187" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/logged_view2.xml" value="0.167" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/drawable/pink_out_line.xml" value="0.165" />
@@ -29,6 +39,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/layout/activity_main2.xml" value="0.1718683197947841" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/layout/activity_register.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/layout/logged_view.xml" value="0.18070652173913043" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TA-UM-Andro/app/src/main/res/mipmap-anydpi-v26/ic_logoUM.xml" value="0.161" />
       </map>
     </option>
   </component>

@@ -57,7 +57,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ic_register_hero" />
+                android:src="@drawable/ic_baseline_account_circle_24" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -72,16 +72,21 @@
                     android:text="Selamat Datang," />
 
                 <TextView
+
                     android:layout_width="112dp"
                     android:layout_height="wrap_content"
-                    android:text="OSA!"
+                    android:text=""
+                    android:id="@+id/user_name"
+                    android:hint="User"
                     style="@style/viewParent.headerText.NoMode"
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/email_grey"
-                    android:text="khoiruzzad72@gmail.com"
+                    android:text=""
+                    android:id="@+id/user_email"
+                    android:hint="user@usermail.com"
                     />
             </LinearLayout>
         </LinearLayout>
@@ -112,7 +117,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/kondisi_prim"
+                android:text=""
+                android:hint="kondisi"
                 android:layout_margin="30dp"
                 android:gravity="center"
                 style="@style/viewParent.headerText.NoMode"/>
@@ -120,7 +126,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/kondisi_desc"
+                android:text=""
+                android:hint="kondisi_deskripsi"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -197,11 +204,12 @@
                         style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:text="Set Alarm"
                         app:finalCornerAngle="27dp"
+                        android:text="Set Alarm"
                         app:spinning_bar_color="#FFF"
                         app:spinning_bar_padding="6dp"
                         app:spinning_bar_width="4dp" />
+
 
                 </RelativeLayout>
 
