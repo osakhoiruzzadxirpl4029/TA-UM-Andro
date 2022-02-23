@@ -91,81 +91,88 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="784dp"
         android:layout_marginTop="-50dp"
-        android:background="@drawable/background_main">
+        android:background="@drawable/background_main"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="80dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/logged_view2"
             android:orientation="vertical">
+
             <TextView
+                style="@style/viewParent.headerText.NoMode2"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                style="@style/viewParent.headerText.NoMode2"
-                android:layout_height="wrap_content"
-                android:text="Kondisi Rumah Anda: "/>
+                android:text="Kondisi Rumah Anda: " />
 
             <TextView
+                style="@style/viewParent.headerText.NoMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:hint="kondisi"
                 android:layout_margin="30dp"
                 android:gravity="center"
-                style="@style/viewParent.headerText.NoMode"/>
+                android:hint="kondisi"
+                android:text="" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:gravity="center"
                 android:hint="kondisi_deskripsi"
-                android:gravity="center"/>
+                android:text="" />
 
         </LinearLayout>
+
         <LinearLayout
-            android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/logged_view">
+            android:background="@drawable/logged_view"
+            android:elevation="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/ic_baseline_settings_24"/>
+                        android:src="@drawable/ic_baseline_settings_24" />
+
                     <TextView
+                        style="@style/viewParent.headerText.NoMode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        style="@style/viewParent.headerText.NoMode"
-                        android:text="Kontrol \n"/>
+                        android:text="Kontrol \n" />
                 </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:paddingBottom="30dp"
                     android:gravity="center"
-                    >
+                    android:paddingBottom="30dp">
+
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/sol1"
                         style="@style/switch_styling"
@@ -186,9 +193,9 @@
                         android:id="@+id/buz1"
                         style="@style/switch_styling"
                         android:layout_width="300dp"
-                        android:paddingBottom="20dp"
                         android:layout_height="match_parent"
                         android:checked="false"
+                        android:paddingBottom="20dp"
                         android:text="BUZZER"
                         android:textOff="OFF"
                         android:textOn="ON" />
@@ -204,8 +211,8 @@
                         style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        app:finalCornerAngle="27dp"
                         android:text="Set Alarm"
+                        app:finalCornerAngle="27dp"
                         app:spinning_bar_color="#FFF"
                         app:spinning_bar_padding="6dp"
                         app:spinning_bar_width="4dp" />
