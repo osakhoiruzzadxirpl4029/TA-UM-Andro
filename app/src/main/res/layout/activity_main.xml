@@ -208,6 +208,7 @@
 
                     <Button
                         android:id="@+id/setAlarm"
+                        android:onClick="ShowPopUp"
                         style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
