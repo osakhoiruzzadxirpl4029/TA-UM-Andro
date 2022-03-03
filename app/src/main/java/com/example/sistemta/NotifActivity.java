@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class NotifActivity extends AppCompatActivity {
     RecyclerView recView;
@@ -25,5 +27,9 @@ public class NotifActivity extends AppCompatActivity {
         recView.setAdapter(MyAdapter);
         recView.setLayoutManager(new LinearLayoutManager(this));
 
+    }
+
+    public void closeNotif(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
