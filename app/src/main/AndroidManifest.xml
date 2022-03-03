@@ -17,10 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SistemTA">
         <activity
+            android:name=".NotifActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"

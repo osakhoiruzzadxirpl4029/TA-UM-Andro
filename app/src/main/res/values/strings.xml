@@ -8,5 +8,16 @@
     <string name="kondisi_nope">TIDAK AMAN</string>
     <string name="kondisi_desc2">Terdeteksi Pergerakan</string>
     <string name="kondisi_desc">Tidak terdeteksi pergerakan</string>
+    <string-array name="notificationHead">
+        <item>Notif 1</item>
+        <item>Notif 2</item>
+        <item>Notif 3</item>
+    </string-array>
+    <string-array name="notificationDesc">
+        <item>Notif 1</item>
+        <item>Notif 2</item>
+        <item>Notif 3</item>
+    </string-array>
+
     <string name="user_name">User</string>
 </resources>
