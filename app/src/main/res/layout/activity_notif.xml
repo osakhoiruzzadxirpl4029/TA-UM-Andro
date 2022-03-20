@@ -24,7 +24,7 @@
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="X"
+                    android:text="↼"
                     android:onClick="closeNotif"
                     android:id="@+id/closeNotif"
                     />

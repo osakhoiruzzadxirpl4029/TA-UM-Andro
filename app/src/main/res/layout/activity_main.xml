@@ -206,10 +206,10 @@
 
                     <Button
                         android:id="@+id/setAlarm"
-                        android:onClick="ShowPopUp"
                         style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:onClick="ShowPopUp"
                         android:text="Set Alarm"
                         app:finalCornerAngle="27dp"
                         app:spinning_bar_color="#FFF"
