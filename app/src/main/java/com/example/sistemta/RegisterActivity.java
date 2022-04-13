@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText mEmail, mPassword;
+    EditText mEmail, mPassword, mNama;
     Button mRegButton;
     FirebaseAuth fAuth;
 
@@ -28,32 +28,32 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-    //    mEmail = findViewById(R.id.editRegEmail);
-     //   mPassword = findViewById(R.id.editRegPassword);
-      //  mRegButton = findViewById(R.id.regButton);
+        mEmail = findViewById(R.id.editRegEmail);
+        mPassword = findViewById(R.id.editRegPassword);
+        mRegButton = findViewById(R.id.regButton);
 
-//        fAuth = FirebaseAuth.getInstance();
-//
-  //      mRegButton.setOnClickListener(new View.OnClickListener() {
-    //        @Override
-      //      public void onClick(View view) {
-        //        String email = mEmail.getText().toString().trim();
-          //      String pass = mPassword.getText().toString().trim();
+        fAuth = FirebaseAuth.getInstance();
 
-            //    fAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-              //      @Override
-                //    public void onComplete(@NonNull Task<AuthResult> task) {
-                  //      if(task.isSuccessful()){
-                    //        Toast.makeText(RegisterActivity.this,"User Created", Toast.LENGTH_SHORT).show();
+        mRegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = mEmail.getText().toString().trim();
+                String pass = mPassword.getText().toString().trim();
 
-                      //  }
-                        //else{
-                          //  Toast.makeText(RegisterActivity.this,"Error", Toast.LENGTH_SHORT).show();
-                       // }
-                   // }
-                //});
-          //  }
-       // });
+                fAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegisterActivity.this,"User Created", Toast.LENGTH_SHORT).show();
+
+                        }
+                        else{
+                            Toast.makeText(RegisterActivity.this,"Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
 
     }
     public void onLoginClick(View view){
