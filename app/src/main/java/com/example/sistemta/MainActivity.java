@@ -1,6 +1,7 @@
 package com.example.sistemta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -9,12 +10,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    Switch sol, buz;
     DatabaseReference mDatabase;
     Dialog zDialog;
     TextView sTime, eTime;
@@ -35,18 +37,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         zDialog = new Dialog(this);
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        SwitchMaterial sole = findViewById(R.id.sol1);
+        SwitchMaterial buzz = findViewById(R.id.buz1);
+        sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    mDatabase.child("Solenoid").setValue("1");
+                }
+                else{
+                    mDatabase.child("Solenoid").setValue("0");
+                }
+            }
+        });
 
-        //if (sol.isChecked()){
-        //    mDatabase.child("Solenoid").setValue("1");
-        //}else{
-        //   mDatabase.child("Solenoid").setValue("0");
-        //}
-        //if (buz.isChecked()){
-        //    mDatabase.child("Buzzer").setValue("1");
-        //}else{
-        //    mDatabase.child("Buzzer").setValue("0");
-        //}
+        buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked){
+                    mDatabase.child("Buzzer").setValue("1");
+                }
+                else{
+                    mDatabase.child("Buzzer").setValue("0");
+                }
+            }
+        });
 
     }
     public void ShowPopUp(View v){
