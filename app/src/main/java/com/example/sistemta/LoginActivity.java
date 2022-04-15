@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this,"Login Success", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+                            finish();
                         }
                         else{
                             Toast.makeText(LoginActivity.this,"Error", Toast.LENGTH_SHORT).show();
