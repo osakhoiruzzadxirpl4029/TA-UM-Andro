@@ -37,6 +37,20 @@
 
 
             </RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/regInputNama"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:id="@+id/editRegNama"
+                    style="@style/modifiedEditText"
+                    android:backgroundTint="@color/whiteTextColor"
+                    android:hint="Nama"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/regInputEmail"

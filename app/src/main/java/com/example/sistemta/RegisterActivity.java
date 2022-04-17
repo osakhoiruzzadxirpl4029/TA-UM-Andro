@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -27,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        mNama = findViewById(R.id.editRegNama);
         mEmail = findViewById(R.id.editRegEmail);
         mPassword = findViewById(R.id.editRegPassword);
         mRegButton = findViewById(R.id.regButton);
@@ -37,6 +39,8 @@ public class RegisterActivity extends AppCompatActivity {
         mRegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String nama = mNama.getText().toString().trim();
                 String email = mEmail.getText().toString().trim();
                 String pass = mPassword.getText().toString().trim();
 
@@ -44,6 +48,9 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                 //           User user = new User(nama,email);
+                 //           FirebaseDatabase.getInstance().getReference("User")
+                 //                   .child(FirebaseDatabase.getInstance().)
                             Toast.makeText(RegisterActivity.this,"User Created", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                             overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
