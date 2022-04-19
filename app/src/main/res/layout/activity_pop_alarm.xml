@@ -142,12 +142,12 @@
         android:layout_height="100dp"
         android:gravity="center">
 
-        <TextView
+        <Button
             android:id="@+id/setAlarmFix"
-            android:gravity="center"
             style="@style/registerButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
+            android:gravity="center"
             android:text="Set Alarm" />
 
 

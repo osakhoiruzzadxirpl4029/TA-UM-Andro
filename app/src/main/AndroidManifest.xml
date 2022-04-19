@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SistemTA">
         <activity
+            android:name=".PopAlarmActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotifActivity"
             android:exported="false" />
         <activity

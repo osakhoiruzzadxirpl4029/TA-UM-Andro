@@ -209,7 +209,7 @@
                         style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:onClick="ShowPopUp"
+                        android:onClick="AlarmSet"
                         android:text="Set Alarm"
                         app:finalCornerAngle="27dp"
                         app:spinning_bar_color="#FFF"
