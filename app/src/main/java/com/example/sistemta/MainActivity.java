@@ -71,7 +71,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, PopAlarmActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
-//    public void ShowPopUp(View v){
+
+    @Override
+    public void onBackPressed() {
+
+    }
+    //    public void ShowPopUp(View v){
 //        TextView txtClose;
 //        zDialog.setContentView(R.layout.popup_alarm);
 //        sTime.findViewById(R.id.startTime);

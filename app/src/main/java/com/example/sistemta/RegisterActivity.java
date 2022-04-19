@@ -70,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
+
     public void onLoginClick(View view){
         startActivity(new Intent(this, LoginActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
