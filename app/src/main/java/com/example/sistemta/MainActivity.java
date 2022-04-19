@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -27,18 +28,22 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseReference mDatabase;
+    FirebaseAuth fAuth;
     Dialog zDialog;
     TextView sTime, eTime;
     int hour1, minute1;
     int hour2, minute2;
+    Button btnLogout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fAuth = FirebaseAuth.getInstance();
         zDialog = new Dialog(this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        btnLogout = findViewById(R.id.logoutButton);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -65,6 +70,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fAuth.signOut();
+                signOutUser();
+            }
+        });
+
+    }
+
+    private void signOutUser() {
+        Intent logout = new Intent(MainActivity.this, LoginActivity.class);
+        logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(logout);
+        finish();
     }
 
     public void AlarmSet(View view) {
@@ -76,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
     }
+
     //    public void ShowPopUp(View v){
 //        TextView txtClose;
 //        zDialog.setContentView(R.layout.popup_alarm);

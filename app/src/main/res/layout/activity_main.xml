@@ -30,6 +30,7 @@
                     style="@style/bell_button"/>
                 <Button
                     android:layout_width="35dp"
+                    android:id="@+id/logoutButton"
                     android:layout_height="35dp"
                     style="@style/logout_button"
                     />

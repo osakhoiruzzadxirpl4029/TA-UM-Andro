@@ -75,4 +75,10 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(this, LoginActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, LoginActivity.class));
+        overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+    }
 }
