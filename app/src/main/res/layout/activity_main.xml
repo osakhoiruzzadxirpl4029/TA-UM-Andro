@@ -26,6 +26,7 @@
                     android:layout_weight="1"/>
                 <Button
                     android:layout_width="35dp"
+                    android:id="@+id/notifButton"
                     android:layout_height="35dp"
                     style="@style/bell_button"/>
                 <Button

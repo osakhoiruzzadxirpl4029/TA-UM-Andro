@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference mDatabase;
     FirebaseAuth fAuth;
     Dialog zDialog;
-    Button btnLogout;
+    Button btnLogout, btnNotif;
     private FirebaseUser username;
     private DatabaseReference privref;
     private String userId;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         zDialog = new Dialog(this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btnLogout = findViewById(R.id.logoutButton);
+        btnNotif = findViewById(R.id.notifButton);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
 
@@ -94,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnNotif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notifPage();
+            }
+        });
+
         username = FirebaseAuth.getInstance().getCurrentUser();
         privref = FirebaseDatabase.getInstance().getReference("User");
         userId = username.getUid();
@@ -124,12 +132,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void notifPage() {
+        startActivity(new Intent(this, NotifActivity.class));
+        overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
+    }
+
     private void signOutUser() {
         Intent logout = new Intent(MainActivity.this, LoginActivity.class);
         logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(logout);
         finish();
     }
+
 
     public void AlarmSet(View view) {
         startActivity(new Intent(this, PopAlarmActivity.class));
