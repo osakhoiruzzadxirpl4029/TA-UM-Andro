@@ -1,5 +1,6 @@
 package com.example.sistemta;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -21,8 +22,14 @@ import android.widget.TimePicker;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -34,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
     int hour1, minute1;
     int hour2, minute2;
     Button btnLogout;
-
+    private FirebaseUser username;
+    private DatabaseReference privref;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +86,33 @@ public class MainActivity extends AppCompatActivity {
                 signOutUser();
             }
         });
+
+        username = FirebaseAuth.getInstance().getCurrentUser();
+        privref = FirebaseDatabase.getInstance().getReference("User");
+        userId = username.getUid();
+
+        final TextView user_name = findViewById(R.id.user_name);
+        final TextView user_email = findViewById(R.id.user_email);
+
+        privref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user_profile = snapshot.getValue(User.class);
+                if(user_profile != null){
+                    String nama = user_profile.name;
+                    String email = user_profile.email;
+
+                    user_name.setText(nama);
+                    user_email.setText(email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
     }
 
