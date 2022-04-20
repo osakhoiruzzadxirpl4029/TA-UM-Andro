@@ -89,7 +89,9 @@
                     android:hint="user@usermail.com"
                     />
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

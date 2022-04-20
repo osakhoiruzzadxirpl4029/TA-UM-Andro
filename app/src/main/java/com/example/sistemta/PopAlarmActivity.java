@@ -36,22 +36,22 @@ public class PopAlarmActivity extends AppCompatActivity {
                     days += cb1.getText().toString();
                 }
                 if (cb2.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb2.getText().toString();
                 }
                 if (cb3.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb3.getText().toString();
                 }
                 if (cb4.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb4.getText().toString();
                 }
                 if (cb5.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb5.getText().toString();
                 }
                 if (cb6.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb6.getText().toString();
                 }
                 if (cb7.isChecked()){
-                    days += cb1.getText().toString();
+                    days += cb7.getText().toString();
                 }
                 mDatabase.child("Days").setValue(days);
             }

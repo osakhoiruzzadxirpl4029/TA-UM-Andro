@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         //buzzer control
         buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 signOutUser();
             }
         });
-
+        //notif button
         btnNotif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,12 +132,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    //notif button
     private void notifPage() {
         startActivity(new Intent(this, NotifActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
-
+    //signout button
     private void signOutUser() {
         Intent logout = new Intent(MainActivity.this, LoginActivity.class);
         logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -144,12 +145,12 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-
+    //Button to Alarm Page
     public void AlarmSet(View view) {
         startActivity(new Intent(this, PopAlarmActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
-
+    // disabled back button
     @Override
     public void onBackPressed() {
 
