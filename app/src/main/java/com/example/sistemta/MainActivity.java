@@ -37,13 +37,17 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference mDatabase;
     FirebaseAuth fAuth;
     Dialog zDialog;
-    TextView sTime, eTime;
-    int hour1, minute1;
-    int hour2, minute2;
     Button btnLogout;
     private FirebaseUser username;
     private DatabaseReference privref;
     private String userId;
+
+
+    //scheduling ->
+    //TextView sTime, eTime;
+    //int hour1, minute1;
+    //int hour2, minute2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogout = findViewById(R.id.logoutButton);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
+
+        //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //buzzer control
         buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -79,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Logout button
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     String nama = user_profile.name;
                     String email = user_profile.email;
 
+                    //user profile show
                     user_name.setText(nama);
                     user_email.setText(email);
                 }
@@ -133,21 +141,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //    public void ShowPopUp(View v){
-//        TextView txtClose;
-//        zDialog.setContentView(R.layout.popup_alarm);
-//        sTime.findViewById(R.id.startTime);
-//        eTime.findViewById(R.id.endTime);
-//        txtClose = zDialog.findViewById(R.id.closePop);
-//        txtClose.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                zDialog.dismiss();
-//            }
-//        });
-//        zDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        zDialog.show();
-//    }
+    //public void ShowPopUp(View v){
+    //    TextView txtClose;
+    //   zDialog.setContentView(R.layout.popup_alarm);
+    //   sTime.findViewById(R.id.startTime);
+    //    eTime.findViewById(R.id.endTime);
+    //    txtClose = zDialog.findViewById(R.id.closePop);
+    //    txtClose.setOnClickListener(new View.OnClickListener() {
+    //        @Override
+    //        public void onClick(View view) {
+    //           zDialog.dismiss();
+    //        }
+    //    });
+    //    zDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    //    zDialog.show();
+    //}
 
 
     //   public void startTimePick(View view) {
