@@ -28,69 +28,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="Pilih Hari: "
+            android:text="Repeat: "
             android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="138dp"
-            android:layout_height="281dp"
-            android:paddingLeft="30dp"
-            android:orientation="vertical">
+            android:layout_height="158dp"
+            android:orientation="vertical"
+            android:paddingLeft="30dp">
 
-            <CheckBox
-                android:id="@+id/seninCheck"
+            <RadioGroup
+                android:id="@+id/radioG"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Senin" />
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/selasaCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Selasa" />
+                <RadioButton
+                    android:id="@+id/sekaliCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sekali" />
 
-            <CheckBox
-                android:id="@+id/rabuCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Rabu" />
+                <RadioButton
+                    android:id="@+id/harikerjaCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Weekday" />
 
-            <CheckBox
-                android:id="@+id/kamisCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Kamis" />
+                <RadioButton
+                    android:id="@+id/hariliburCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Weekend" />
 
-            <CheckBox
-                android:id="@+id/jumatCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Jumat" />
+            </RadioGroup>
 
-            <CheckBox
-                android:id="@+id/sabtuCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sabtu" />
 
-            <CheckBox
-                android:id="@+id/mingguCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Minggu" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="138dp"
-            android:layout_height="281dp"
-            android:paddingLeft="30dp"
-            android:orientation="vertical">
+            android:layout_height="158dp"
+            android:orientation="vertical"
+            android:paddingLeft="30dp">
 
 
         </LinearLayout>
@@ -103,10 +85,10 @@
         android:padding="20dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="Pilih Jam: "
+            android:text="Waktu : "
             android:textColor="@color/black" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,26 +96,19 @@
             android:gravity="center"
             android:paddingTop="10dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start Time"
-                android:background="@color/primaryTextColor"
-                android:padding="10dp"
-                android:id="@+id/startTime"
-                android:onClick="startTimePick"
-                style="@style/AppTheme.NoActionBar"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="End Time"
-                android:padding="10dp"
-                android:id="@+id/endTime"
-                android:onClick="endTimePick"
-                android:background="@color/registerBack"
-                style="@style/AppTheme.NoActionBar"
-                />
+
+            <Button
+                android:id="@+id/startButton1"
+                style="@style/loginButton"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Start" />
+            <Button
+                android:id="@+id/endButton1"
+                style="@style/loginButton"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="End" />
 
         </LinearLayout>
     </LinearLayout>
@@ -151,8 +126,28 @@
             android:text="Set Alarm" />
 
 
-    </RelativeLayout>
 
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Alarm1"
+            android:id="@+id/Alarm1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Alarm2"
+            android:id="@+id/Alarm2"
+            />
+
+
+    </LinearLayout>
 
 
 

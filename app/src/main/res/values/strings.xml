@@ -8,6 +8,8 @@
     <string name="kondisi_nope">TIDAK AMAN</string>
     <string name="kondisi_desc2">Terdeteksi Pergerakan</string>
     <string name="kondisi_desc">Tidak terdeteksi pergerakan</string>
+    <string name="acc">Ya</string>
+    <string name="den">Tidak</string>
     <string-array name="notificationHead">
         <item>Notif 1</item>
         <item>Notif 2</item>

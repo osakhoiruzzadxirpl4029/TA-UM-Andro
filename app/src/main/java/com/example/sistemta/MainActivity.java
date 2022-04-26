@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -20,6 +22,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.sistemta.databinding.ActivityMainBinding;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     Dialog zDialog;
     Button btnLogout, btnNotif;
+    MaterialAlertDialogBuilder alertD;
     private FirebaseUser username;
     private DatabaseReference privref;
     private String userId;
-
 
     //scheduling ->
     //TextView sTime, eTime;
@@ -57,9 +61,37 @@ public class MainActivity extends AppCompatActivity {
         zDialog = new Dialog(this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btnLogout = findViewById(R.id.logoutButton);
+        alertD = new MaterialAlertDialogBuilder(MainActivity.this);
         btnNotif = findViewById(R.id.notifButton);
+        final TextView kondisi1 = findViewById(R.id.kondisiTitle);
+        final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
+
+
+
+        ValueEventListener getListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String kondisi = snapshot.child("PIR").getValue(String.class);
+                if(kondisi == "0"){
+                    kondisi1.setText("Aman");
+                    kondisi2.setText("Tidak terdeteksi pergerakan");
+                }
+                else{
+                    kondisi1.setText("Tidak Aman");
+                    kondisi2.setText("Terdeteksi pergerakan");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+
+
+
 
         //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -73,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         //buzzer control
         buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -91,10 +124,24 @@ public class MainActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fAuth.signOut();
-                signOutUser();
+                alertD.setTitle("Logging Out").setMessage("Apakah Anda yakin untuk keluar?");
+                alertD.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alertD.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        fAuth.signOut();
+                        signOutUser();
+                    }
+                });
+
             }
         });
+
         //notif button
         btnNotif.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //get Nama User dan Email
         username = FirebaseAuth.getInstance().getCurrentUser();
         privref = FirebaseDatabase.getInstance().getReference("User");
         userId = username.getUid();

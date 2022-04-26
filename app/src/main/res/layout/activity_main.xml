@@ -121,6 +121,7 @@
             <TextView
                 style="@style/viewParent.headerText.NoMode"
                 android:layout_width="match_parent"
+                android:id="@+id/kondisiTitle"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:gravity="center"
@@ -131,6 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:id="@+id/kondisiDesc"
                 android:hint="kondisi_deskripsi"
                 android:text="" />
 
