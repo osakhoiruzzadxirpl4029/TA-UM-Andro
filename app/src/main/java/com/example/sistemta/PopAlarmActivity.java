@@ -29,12 +29,19 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
     Button btn1,btn2,btnSet;
     MaterialTimePicker time1;
     TextView t1,t2;
+    boolean isFromClicked = false;
 
 
     @Override
     public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-        t1.setText("Jam: " + hourOfDay + "Menit: "+ minute);
-        t2.setText("Jam: " + hourOfDay + "Menit: "+ minute);
+        if (isFromClicked){
+            t1.setText("Jam: " + hourOfDay + "Menit: "+ minute);
+        }
+        else{
+            t2.setText("Jam: " + hourOfDay + "Menit: "+ minute);
+        }
+
+
     }
 
     @Override
@@ -51,12 +58,15 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
         btn1 = findViewById(R.id.startButton1);
         btn2 = findViewById(R.id.endButton1);
 
+        setCurrentTimeOnView();
+        addListenerButton();
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     DialogFragment timePicker = new TimePickerFragment();
                     timePicker.show(getSupportFragmentManager(), "timepicker");
+                    isFromClicked = false;
                 }
             });
             btn2.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +74,20 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
                 public void onClick(View view) {
                     DialogFragment timePicker = new TimePickerFragment2();
                     timePicker.show(getSupportFragmentManager(), "timepicker");
+                    isFromClicked = true;
                 }
             });
 
 
 
 
+    }
+
+    private void addListenerButton() {
+
+    }
+
+    private void setCurrentTimeOnView() {
     }
 
 }
