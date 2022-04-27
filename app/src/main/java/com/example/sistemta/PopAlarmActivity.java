@@ -51,7 +51,7 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
         btn1 = findViewById(R.id.startButton1);
         btn2 = findViewById(R.id.endButton1);
 
-        if (cb1.isChecked()){
+
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -62,11 +62,11 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogFragment timePicker = new TimePickerFragment();
+                    DialogFragment timePicker = new TimePickerFragment2();
                     timePicker.show(getSupportFragmentManager(), "timepicker");
                 }
             });
-        }
+
 
 
 
