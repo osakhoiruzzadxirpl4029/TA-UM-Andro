@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    Toast.makeText(RegisterActivity.this,"User Created", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this,"Berhasil Membuat Akun", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                     overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
                                 }
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         }
                         else{
-                            Toast.makeText(RegisterActivity.this,"Error Creating User", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"Gagal Membuat Akun", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

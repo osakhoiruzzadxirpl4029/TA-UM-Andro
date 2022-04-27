@@ -47,12 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference privref;
     private String userId;
 
-    //scheduling ->
-    //TextView sTime, eTime;
-    //int hour1, minute1;
-    //int hour2, minute2;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
-
-
 
         ValueEventListener getListener = new ValueEventListener() {
             @Override
@@ -90,9 +82,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
-
-
         //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -105,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         //buzzer control
         buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -124,21 +112,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alertD.setTitle("Logging Out").setMessage("Apakah Anda yakin untuk keluar?");
-                alertD.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-                alertD.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        fAuth.signOut();
-                        signOutUser();
-                    }
-                });
-
+                fAuth.signOut();
+                signOutUser();
             }
         });
 
@@ -177,22 +152,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
-    //notif button
+    //logout method
+    private void signOutUser(){
+        Intent logout = new Intent(MainActivity.this, LoginActivity.class);
+         logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(logout);
+        finish();
+    }
+    //notif method
     private void notifPage() {
         startActivity(new Intent(this, NotifActivity.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
-    //signout button
-    private void signOutUser() {
-        Intent logout = new Intent(MainActivity.this, LoginActivity.class);
-        logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(logout);
-        finish();
-    }
-
     //Button to Alarm Page
     public void AlarmSet(View view) {
         startActivity(new Intent(this, PopAlarmActivity.class));
@@ -203,49 +175,4 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
     }
-
-    //public void ShowPopUp(View v){
-    //    TextView txtClose;
-    //   zDialog.setContentView(R.layout.popup_alarm);
-    //   sTime.findViewById(R.id.startTime);
-    //    eTime.findViewById(R.id.endTime);
-    //    txtClose = zDialog.findViewById(R.id.closePop);
-    //    txtClose.setOnClickListener(new View.OnClickListener() {
-    //        @Override
-    //        public void onClick(View view) {
-    //           zDialog.dismiss();
-    //        }
-    //    });
-    //    zDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-    //    zDialog.show();
-    //}
-
-
-    //   public void startTimePick(View view) {
-    //  TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
-    //      @Override
-    //      public void onTimeSet(TimePicker timePicker, int selectedHour1, int selectedMinute1) {
-    //          hour1 = selectedHour1;
-    //          minute1 = selectedMinute1;
-    //          sTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour1,minute1));
-    //      }
-    //  };
-    //  TimePickerDialog timePickerDialog = new TimePickerDialog(this,onTimeSetListener,hour1,minute1,true);
-    //  timePickerDialog.setTitle("Pilih Waktu");
-    //  timePickerDialog.show();
-    //}
-
-    //public void endTimePick(View view) {
-    //  TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
-    //      @Override
-    //      public void onTimeSet(TimePicker timePicker, int selectedHour2, int selectedMinute2) {
-    //          hour2 = selectedHour2;
-    //          minute1 = selectedMinute2;
-    //          eTime.setText(String.format(Locale.getDefault(), "%02d:%02d",hour2,minute2));
-    //      }
-    //  };
-    //  TimePickerDialog timePickerDialog = new TimePickerDialog(this,onTimeSetListener,hour2,minute2,true);
-    //  timePickerDialog.setTitle("Pilih Waktu");
-    //  timePickerDialog.show();
-    //}
 }

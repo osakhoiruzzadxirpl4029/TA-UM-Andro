@@ -18,10 +18,14 @@
         android:theme="@style/Theme.SistemTA">
         <activity
             android:name=".PopAlarmActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".NotifActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="false"
@@ -40,7 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>

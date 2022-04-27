@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
                         else{
-                            Toast.makeText(LoginActivity.this,"Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Email atau Password Salah", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
