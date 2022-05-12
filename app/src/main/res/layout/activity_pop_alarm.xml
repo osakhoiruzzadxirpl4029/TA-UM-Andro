@@ -11,8 +11,8 @@
     <LinearLayout
         android:layout_width="338dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/textView"
@@ -21,59 +21,47 @@
             android:padding="20dp"
             android:text="Repeat: "
             android:textColor="@color/black" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:paddingBottom="30dp">
 
-        <LinearLayout
-            android:layout_width="138dp"
-            android:layout_height="158dp"
-            android:orientation="vertical"
-            android:paddingLeft="30dp">
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/once"
+                style="@style/switch_styling"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:checked="false"
+                android:text="Sekali"
+                android:textOff="OFF"
+                android:textOn="ON" />
+        </RelativeLayout>
 
-            <RadioGroup
-                android:id="@+id/radioG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
 
-                <RadioButton
-                    android:id="@+id/sekaliCheck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sekali" />
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/daily"
+                style="@style/switch_styling"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:paddingBottom="20dp"
+                android:text="Setiap Hari"
+                android:textOff="OFF"
+                android:textOn="ON" />
+        </RelativeLayout>
 
-                <RadioButton
-                    android:id="@+id/harikerjaCheck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Weekday" />
-
-                <RadioButton
-                    android:id="@+id/hariliburCheck"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Weekend" />
-
-            </RadioGroup>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="138dp"
-            android:layout_height="158dp"
-            android:orientation="vertical"
-            android:paddingLeft="30dp">
-
-
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="338dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:layout_width="90dp"
@@ -94,6 +82,7 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="Start" />
+
             <Button
                 android:id="@+id/endButton1"
                 style="@style/loginButton"
@@ -103,44 +92,25 @@
 
         </LinearLayout>
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/setAlarmFix"
-            style="@style/registerButton"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:gravity="center"
-            android:text="Set Alarm" />
-
-
-
-    </RelativeLayout>
     <LinearLayout
         android:layout_height="100dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:gravity="center"
         >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="Alarm1"
-            android:id="@+id/Alarm1"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="Alarm2"
-            android:id="@+id/Alarm2"
-            />
 
+        <TextView
+            android:id="@+id/Alarm1"
+            android:layout_width="111dp"
+            android:layout_height="40dp"
+            android:hint="Pewaktu On" />
+
+        <TextView
+            android:id="@+id/Alarm2"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:hint="Pewaktu Off" />
 
     </LinearLayout>
 
-
-
-
-</LinearLayout>
+    </LinearLayout>
