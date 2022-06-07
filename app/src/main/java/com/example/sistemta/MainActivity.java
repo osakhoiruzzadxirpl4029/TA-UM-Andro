@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     MaterialAlertDialogBuilder alertD;
     private FirebaseUser username;
     private DatabaseReference privref;
+    private DatabaseReference privpir;
     private String userId;
     private NotificationManagerCompat notifManage;
     //scheduling ->
@@ -124,8 +125,11 @@ public class MainActivity extends AppCompatActivity {
         privref = FirebaseDatabase.getInstance().getReference("User");
         userId = username.getUid();
 
+        privpir = FirebaseDatabase.getInstance().getReference("PIR");
+
         final TextView user_name = findViewById(R.id.user_name);
         final TextView user_email = findViewById(R.id.user_email);
+        final TextView user_kondisi = findViewById(R.id.kondisiTitle);
 
         privref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -138,6 +142,22 @@ public class MainActivity extends AppCompatActivity {
                     //user profile show
                     user_name.setText(nama);
                     user_email.setText(email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        privpir.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Kondisi kondisi_pir = snapshot.getValue(Kondisi.class);
+                if(kondisi_pir != null) {
+                    String PIR = kondisi_pir.PIR;
+
+                    user_kondisi.setText(PIR);
                 }
             }
 
