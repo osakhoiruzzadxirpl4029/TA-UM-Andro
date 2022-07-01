@@ -71,7 +71,7 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
             t2.setText("Pukul: " + hourOfDay+":"+minute+" WIB");
             setAlarm2(d);
         }
-        if (isFromClicked == 3){
+        else if (isFromClicked == 3){
             Calendar e = Calendar.getInstance();
             e.set(Calendar.HOUR_OF_DAY, hourOfDay);
             e.set(Calendar.MINUTE, minute);
@@ -181,23 +181,23 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked){
-                    //once.setChecked(false);
-                    //btn1.setOnClickListener(new View.OnClickListener() {
-                    //    @Override
-                    //    public void onClick(View view) {
-                    //        DialogFragment timePicker = new TimePickerFragment3();
-                    //        timePicker.show(getSupportFragmentManager(), "timepicker");
-                    //        isFromClicked = 3;
-                    //    }
-                    //});
-                    //btn2.setOnClickListener(new View.OnClickListener() {
-                    //    @Override
-                    //    public void onClick(View view) {
-                    //        DialogFragment timePicker = new TimePickerFragment4();
-                    //        timePicker.show(getSupportFragmentManager(), "timepicker");
-                    //        isFromClicked = 4;
-                    //    }
-                    //});
+                    once.setChecked(false);
+                    btn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            DialogFragment timePicker = new TimePickerFragment3();
+                            timePicker.show(getSupportFragmentManager(), "timepicker");
+                            isFromClicked = 3;
+                        }
+                    });
+                    btn2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            DialogFragment timePicker = new TimePickerFragment4();
+                            timePicker.show(getSupportFragmentManager(), "timepicker");
+                            isFromClicked = 4;
+                        }
+                    });
                 }
             }
         });

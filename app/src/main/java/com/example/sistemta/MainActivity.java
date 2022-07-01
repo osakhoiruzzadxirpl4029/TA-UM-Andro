@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         //buzzer control
         buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -179,17 +178,12 @@ public class MainActivity extends AppCompatActivity {
                if (value == "Aman"){
                    user_kondisi.setText(value);
                    user_deskripsi.setText("Tidak terdeteksi pergerakan");
-
                }
                else{
                    user_kondisi.setText("Tidak Aman");
                    user_deskripsi.setText("Terdeteksi adanya pergerakan");
                }
-
-
-
            }
-
            @Override
            public void onCancelled(@NonNull DatabaseError error) {
                Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();
