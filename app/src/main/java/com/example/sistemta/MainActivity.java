@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser username;
     private DatabaseReference privref;
     private DatabaseReference privpir;
+    private DatabaseReference privkontr;
     private String userId;
     private NotificationManagerCompat notifManage;
     //scheduling ->
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         userId = username.getUid();
 
         privpir = FirebaseDatabase.getInstance().getReference().child("PIR");
+        privkontr = FirebaseDatabase.getInstance().getReference().child("Work");
 
         final TextView user_name = findViewById(R.id.user_name);
         final TextView user_email = findViewById(R.id.user_email);
@@ -134,6 +136,18 @@ public class MainActivity extends AppCompatActivity {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("notification", "notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+        }
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("notification2", "notification2", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+        }
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("notification3", "notification3", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
 
@@ -186,6 +200,45 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();
+            }
+        });
+        privkontr.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int value = snapshot.getValue(int.class);
+                final TextView kondisi_kontrol = findViewById(R.id.kondisiKont);
+                if (value == 1){
+                    kondisi_kontrol.setText("Aktif");
+                    kondisi_kontrol.setTextColor(Color.GREEN);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification2")
+                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setContentTitle("Kontrol Otomatis Aktif")
+                            .setContentText("Kontrol sistem otomatis dalam kondisi aktif")
+                            .setStyle(new NotificationCompat.BigTextStyle()
+                                    .bigText("Kontrol sistem otomatis dalam kondisi aktif"))
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                    NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+                    managerCompat.notify(2,builder.build());
+
+                }
+                else{
+                    kondisi_kontrol.setText("Tidak Aktif");
+                    kondisi_kontrol.setTextColor(Color.GRAY);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification3")
+                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setContentTitle("Kontrol Otomatis Tidak Aktif")
+                            .setContentText("Kontrol sistem otomatis dalam kondisi tidak aktif")
+                            .setStyle(new NotificationCompat.BigTextStyle()
+                                    .bigText("Kontrol sistem otomatis dalam kondisi tidak aktif"))
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                    NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+                    managerCompat.notify(3,builder.build());
+                }
+            }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();

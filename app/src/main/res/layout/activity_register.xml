@@ -99,6 +99,7 @@
 
             <TextView
                 style="@style/parent"
+                android:paddingTop="15dp"
                 android:onClick="onLoginClick"
                 android:text="Back to Login Page"
                 android:textAlignment="center"
