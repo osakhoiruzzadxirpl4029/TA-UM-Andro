@@ -132,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
         //final TextView user_kondisi = findViewById(R.id.kondisiTitle);
         //final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("notification", "notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+        }
+
         privref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -166,6 +173,16 @@ public class MainActivity extends AppCompatActivity {
                     user_kondisi.setText("Tidak Aman");
                     user_kondisi.setTextColor(Color.RED);
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification")
+                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setContentTitle("My notification")
+                            .setContentText("Much longer text that cannot fit one line...")
+                            .setStyle(new NotificationCompat.BigTextStyle()
+                                    .bigText("Much longer text that cannot fit one line..."))
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                    NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+                    managerCompat.notify(1,builder.build());
+
                 }
             }
             @Override
