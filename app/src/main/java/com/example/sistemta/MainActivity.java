@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
-        getData();
+
 
         //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -151,7 +151,27 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Failed to load Account data",Toast.LENGTH_SHORT).show();
          }
        });
-       // privpir.addListenerForSingleValueEvent(new ValueEventListener() {
+        privpir.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int value = snapshot.getValue(int.class);
+                final TextView user_kondisi = findViewById(R.id.kondisiTitle);
+                final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
+                if (value == 0){
+                    user_kondisi.setText("Aman");
+                    user_deskripsi.setText("Tidak terdeteksi pergerakan");
+                }
+                else{
+                    user_kondisi.setText("Tidak Aman");
+                    user_deskripsi.setText("Terdeteksi adanya pergerakan");
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();
+            }
+        });
+        // privpir.addListenerForSingleValueEvent(new ValueEventListener() {
          //   @Override
            // public void onDataChange(@NonNull DataSnapshot snapshot) {
              //   String kondisi = snapshot.getValue().toString();
@@ -168,28 +188,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getData() {
-       privpir.addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot) {
-               String value = snapshot.getValue(String.class);
-               final TextView user_kondisi = findViewById(R.id.kondisiTitle);
-               final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
-               if (value == "Aman"){
-                   user_kondisi.setText(value);
-                   user_deskripsi.setText("Tidak terdeteksi pergerakan");
-               }
-               else{
-                   user_kondisi.setText("Tidak Aman");
-                   user_deskripsi.setText("Terdeteksi adanya pergerakan");
-               }
-           }
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
-               Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();
-           }
-       });
-    }
 
     //notif button
     private void notifPage() {

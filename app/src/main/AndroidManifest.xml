@@ -46,6 +46,8 @@
         </activity>
         <receiver android:name=".AlarmReceiver"/>
         <receiver android:name=".AlarmReceiver2"/>
+        <receiver android:name=".AlarmReceiver3"/>
+        <receiver android:name=".AlarmReceiver4"/>
     </application>
 
 </manifest>
