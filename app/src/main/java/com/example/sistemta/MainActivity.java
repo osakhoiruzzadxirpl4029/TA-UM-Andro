@@ -25,6 +25,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -75,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
         SwitchMaterial buzz = findViewById(R.id.buz1);
-
-
+        final LinearLayout colorBG = findViewById(R.id.backgroundCL);
         //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -154,16 +154,18 @@ public class MainActivity extends AppCompatActivity {
         privpir.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int value = snapshot.getValue(int.class);
+                String value = snapshot.getValue(String.class);
                 final TextView user_kondisi = findViewById(R.id.kondisiTitle);
                 final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
-                if (value == 0){
-                    user_kondisi.setText("Aman");
+                if (value == "Aman"){
+                    user_kondisi.setText(value);
                     user_deskripsi.setText("Tidak terdeteksi pergerakan");
+
                 }
                 else{
                     user_kondisi.setText("Tidak Aman");
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
+                    colorBG.setBackgroundColor(Color.MAGENTA);
                 }
             }
             @Override
@@ -171,20 +173,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Failed to load Kondisi data", Toast.LENGTH_SHORT).show();
             }
         });
-        // privpir.addListenerForSingleValueEvent(new ValueEventListener() {
-         //   @Override
-           // public void onDataChange(@NonNull DataSnapshot snapshot) {
-             //   String kondisi = snapshot.getValue().toString();
-               // user_kondisi.setText(kondisi);
-                //user_deskripsi.setText("Rumah anda dalam kondisi aman");
-            //}
-
-            //@Override
-            //public void onCancelled(@NonNull DatabaseError error) {
-
-            //}
-        //});
-
 
     }
 
