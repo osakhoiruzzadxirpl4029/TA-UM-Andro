@@ -167,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 if (value == 0){
                     user_kondisi.setText("Aman");
                     user_deskripsi.setText("Tidak terdeteksi pergerakan");
+                    user_kondisi.setTextColor(Color.WHITE);
 
                 }
                 else{
@@ -175,10 +176,10 @@ public class MainActivity extends AppCompatActivity {
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification")
                             .setSmallIcon(R.drawable.ic_launcher_background)
-                            .setContentTitle("My notification")
-                            .setContentText("Much longer text that cannot fit one line...")
+                            .setContentTitle("Terdeteksi Pergerakan")
+                            .setContentText("Sensor mendapati pergerakan di depan pintu anda")
                             .setStyle(new NotificationCompat.BigTextStyle()
-                                    .bigText("Much longer text that cannot fit one line..."))
+                                    .bigText("Sensor mendapati pergerakan di depan pintu anda"))
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                     NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
                     managerCompat.notify(1,builder.build());
