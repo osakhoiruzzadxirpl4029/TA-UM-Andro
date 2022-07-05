@@ -154,18 +154,18 @@ public class MainActivity extends AppCompatActivity {
         privpir.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
+                int value = snapshot.getValue(int.class);
                 final TextView user_kondisi = findViewById(R.id.kondisiTitle);
                 final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
-                if (value == "Aman"){
-                    user_kondisi.setText(value);
+                if (value == 0){
+                    user_kondisi.setText("Aman");
                     user_deskripsi.setText("Tidak terdeteksi pergerakan");
 
                 }
                 else{
                     user_kondisi.setText("Tidak Aman");
+                    user_kondisi.setTextColor(Color.RED);
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
-                    colorBG.setBackgroundColor(Color.MAGENTA);
                 }
             }
             @Override
