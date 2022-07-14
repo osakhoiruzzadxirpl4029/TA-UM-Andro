@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         zDialog = new Dialog(this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btnLogout = findViewById(R.id.logoutButton);
-        btnNotif = findViewById(R.id.notifButton);
         final TextView kondisi1 = findViewById(R.id.kondisiTitle);
         final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
@@ -108,16 +107,26 @@ public class MainActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fAuth.signOut();
-                signOutUser();
-            }
-        });
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Apakah anda yakin untuk keluar?");
+                builder.setCancelable(true);
+                builder.setNegativeButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        fAuth.signOut();
+                        signOutUser();
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
 
-        //notif button
-        btnNotif.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                notifPage();
             }
         });
 
