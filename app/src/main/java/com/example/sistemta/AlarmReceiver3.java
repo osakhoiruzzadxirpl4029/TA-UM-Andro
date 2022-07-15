@@ -12,6 +12,6 @@ public class AlarmReceiver3 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("Work").setValue("1");
+        mDatabase.child("Work").setValue(1);
     }
 }

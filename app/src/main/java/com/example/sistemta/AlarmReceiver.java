@@ -16,7 +16,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("Work").setValue("1");
+        mDatabase.child("Work").setValue(1);
         //NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"My Notif");
         //builder.setContentTitle("My Notif");
         //builder.setContentText("Hello bro");
