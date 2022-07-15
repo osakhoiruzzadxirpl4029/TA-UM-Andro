@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
                     user_kondisi.setTextColor(Color.RED);
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification")
-                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setSmallIcon(R.mipmap.ic_icon_round)
                             .setContentTitle("Terdeteksi Pergerakan")
                             .setContentText("Sensor mendapati pergerakan di depan pintu anda")
                             .setStyle(new NotificationCompat.BigTextStyle()
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                     kondisi_kontrol.setText("Aktif");
                     kondisi_kontrol.setTextColor(Color.GREEN);
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification2")
-                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setSmallIcon(R.mipmap.ic_icon_round)
                             .setContentTitle("Kontrol Otomatis Aktif")
                             .setContentText("Kontrol sistem otomatis dalam kondisi aktif")
                             .setStyle(new NotificationCompat.BigTextStyle()
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
                     kondisi_kontrol.setText("Tidak Aktif");
                     kondisi_kontrol.setTextColor(Color.GRAY);
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification3")
-                            .setSmallIcon(R.drawable.ic_launcher_background)
+                            .setSmallIcon(R.mipmap.ic_icon_round)
                             .setContentTitle("Kontrol Otomatis Tidak Aktif")
                             .setContentText("Kontrol sistem otomatis dalam kondisi tidak aktif")
                             .setStyle(new NotificationCompat.BigTextStyle()
