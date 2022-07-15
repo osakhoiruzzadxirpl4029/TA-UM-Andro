@@ -72,6 +72,7 @@
                     android:backgroundTint="@color/primaryTextColor"
                     android:hint="@string/login_password_hint"
                     android:inputType="textPassword"
+
                     android:maxLines="1" />
 
 
