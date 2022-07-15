@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setPositiveButton("Tidak", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
+                        dialogInterface.cancel();
                     }
                 });
                 AlertDialog alertDialog = builder.create();
