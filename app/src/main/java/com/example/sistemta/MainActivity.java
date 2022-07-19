@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         final TextView kondisi1 = findViewById(R.id.kondisiTitle);
         final TextView kondisi2 = findViewById(R.id.kondisiDesc);
         SwitchMaterial sole = findViewById(R.id.sol1);
-        SwitchMaterial buzz = findViewById(R.id.buz1);
         final LinearLayout colorBG = findViewById(R.id.backgroundCL);
         //solenoid control
         sole.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -91,17 +90,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //buzzer control
-        buzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked){
-                    mDatabase.child("Buzzer").setValue("1");
-                }
-                else{
-                    mDatabase.child("Buzzer").setValue("0");
-                }
-            }
-        });
+
 
         //Logout button
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -187,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 int value = snapshot.getValue(int.class);
                 final TextView user_kondisi = findViewById(R.id.kondisiTitle);
                 final TextView user_deskripsi = findViewById(R.id.kondisiDesc);
+                final TextView buz2 = findViewById(R.id.buz2);
                 if (value == 0){
                     user_kondisi.setText("Aman");
                     user_deskripsi.setText("Tidak terdeteksi pergerakan");
@@ -196,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     user_kondisi.setText("Tidak Aman");
                     user_kondisi.setTextColor(Color.RED);
+                    buz2.setText("Menyala");
+                    buz2.setTextColor(Color.RED);
                     user_deskripsi.setText("Terdeteksi adanya pergerakan");
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "notification")
                             .setSmallIcon(R.mipmap.ic_icon_round)

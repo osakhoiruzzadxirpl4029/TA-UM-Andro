@@ -96,7 +96,7 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver4.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, f.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, f.getTimeInMillis(),24*60*60*1000, pendingIntent);
         Toast.makeText(this, "Off Alarm Aktif", Toast.LENGTH_SHORT).show();
     }
 
@@ -104,7 +104,7 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver3.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, e.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, e.getTimeInMillis(),24*60*60*1000, pendingIntent);
         Toast.makeText(this, "On Alarm Aktif", Toast.LENGTH_SHORT).show();
     }
 
@@ -202,14 +202,7 @@ public class PopAlarmActivity extends AppCompatActivity implements TimePickerDia
             }
         });
 
-
-
-
-
-
     }
-
-
 
     private void addListenerButton() {
 

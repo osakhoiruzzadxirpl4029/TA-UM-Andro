@@ -197,14 +197,21 @@
                     android:layout_height="50dp"
                     android:gravity="center">
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
+                    <TextView
                         android:id="@+id/buz1"
-                        style="@style/switch_styling"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
-                        android:checked="false"
                         android:paddingBottom="20dp"
                         android:text="BUZZER"
+                        android:textOff="OFF"
+                        android:textOn="ON" />
+                    <TextView
+                        android:id="@+id/buz2"
+                        android:gravity="right"
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="20dp"
+                        android:hint="kondisi"
                         android:textOff="OFF"
                         android:textOn="ON" />
                 </RelativeLayout>
